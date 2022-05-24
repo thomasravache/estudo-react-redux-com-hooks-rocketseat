@@ -5,7 +5,12 @@ function addCourseAction(title) {
 }
 
 function CourseList() {
-  const courses = useSelector(state => state.data);
+  const courseQuantity = 2;
+
+  const courses = useSelector(
+    state => state.data.slice(0, 2),
+    [courseQuantity]
+  );
   const dispatch = useDispatch();
 
   const addCourse = () => {
