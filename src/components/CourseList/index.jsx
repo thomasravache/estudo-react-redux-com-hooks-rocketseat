@@ -1,14 +1,15 @@
 import { useSelector, useDispatch } from 'react-redux';
 
+function addCourseAction(title) {
+  return { type: 'ADD_COURSE', title };
+}
+
 function CourseList() {
   const courses = useSelector(state => state.data);
   const dispatch = useDispatch();
 
   const addCourse = () => {
-    dispatch({
-      type: 'ADD_COURSE',
-      title: 'Java',
-    });
+    dispatch(addCourseAction('JSX'));
   }
 
   return(
